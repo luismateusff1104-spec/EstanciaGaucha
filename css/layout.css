@@ -1,0 +1,57 @@
+main{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+header{
+    width: 100%;
+    height: auto;
+}
+#cabecalho{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+}
+#cabecalhoEsq, #cabecalhoMeio, #cabecalhoDir{
+    height: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#cabecalhoEsq{
+    width: 20%;
+}
+#cabecalhoMeio{
+    width: 55%;
+}
+#cabecalhoDir{
+    width: 25%;
+}
+#navSup{
+    width: 100%;
+    height: auto;
+}
+#sectionMeio{
+    width: 100%;
+    height: auto;
+}
+#articleBannerSup, .bannerCategoria{
+    width: 100%;
+    height: auto;
+}
+.articleSecao{
+    width: 95%;
+    height: auto;
+    margin: 1% auto;
+}
+@media all and (max-width: 850px){
+    #cabecalho{
+        display: block;
+    }
+    #cabecalhoEsq, #cabecalhoMeio, #cabecalhoDir{
+        width: 100%;
+        height: auto;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+}

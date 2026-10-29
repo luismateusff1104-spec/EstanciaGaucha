@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Estância Gaúcha | Fale conosco (SAC)</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <div id="divTopo">Frete grátis acima de R$ 299,00 | Parcele em até 6x sem juros | Troca em até 30 dias</div>
+            <section id="cabecalho">
+                <div id="cabecalhoEsq"><!-- Inicio div cabecalhoEsq-->
+                    <p class="p1">
+                        <a href="../index.html">
+                            <img id="logoEstancia" src="../img/logo-escura.png" alt="Logomarca Estância Gaúcha"
+                                title="Estância Gaúcha" />
+                        </a>
+                    </p>
+                </div><!-- Fim div cabecalhoEsq-->
+                <div id="cabecalhoMeio"><!-- Inicio div cabecalhoMeio-->
+                    <p id="pBuscaMeio">
+                        <input type="text" id="campoBusca" placeholder="O que você procura? Ex.: cuia, bombacha, chapéu" />
+                        <button id="btnBusca">Buscar</button>
+                    </p>
+                </div><!-- Fim div cabecalhoMeio-->
+                <div id="cabecalhoDir"><!-- Inicio div cabecalhoDir-->
+                    <p id="pLinksDir">
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho (<span id="contadorCarrinho">0</span>)</a>
+                    </p>
+                </div><!-- Fim div cabecalhoDir-->
+            </section>
+        </header>
+        <nav id="navSup">
+            <a class="linkMenu" href="./pilcha-masculina.html">Pilcha Masculina</a>
+            <a class="linkMenu" href="./pilcha-feminina.html">Pilcha Feminina</a>
+            <a class="linkMenu" href="./pilcha-infantil.html">Pilcha Infantil</a>
+            <a class="linkMenu" href="./chapelaria.html">Chapelaria</a>
+            <a class="linkMenu" href="./chimarrao.html">Chimarrão</a>
+            <a class="linkMenu" href="./churrasco.html">Churrasco</a>
+            <a class="linkMenu" href="./selaria.html">Selaria</a>
+            <a class="linkMenu" href="./produtos.html">Todos os produtos</a>
+            <a class="linkMenu" href="./fale-conosco.html">Fale conosco</a>
+        </nav>
+        <section id="sectionMeio"><!--Inicio sectionMeio-->
+            <article class="bannerCategoria" id="bannerProdutos"><!--Inicio banner-->
+                <h1>Fale conosco</h1>
+                <p>Atendimento ao cliente (SAC): tire dúvidas, faça pedidos de troca, elogios e reclamações.</p>
+            </article><!--Fim banner-->
+            <p class="pCaminho"><a href="../index.html">Início</a> &gt; Fale conosco</p>
+            <article class="articleSecao"><!--Inicio canais-->
+                <h2 class="h2">Canais de atendimento</h2>
+                <hr class="hrTitulo" align="center" />
+
+                <div class="divLinha"><!-- Inicio divLinha -->
+                    <div class="divCanal">
+                        <h3>Telefone e WhatsApp</h3>
+                        <p>0800 000 0000<br />(00) 00000-0000</p>
+                    </div>
+                    <div class="divCanal">
+                        <h3>E-mail</h3>
+                        <p>sac@estanciagaucha.com.br<br />Resposta em até 2 dias úteis</p>
+                    </div>
+                    <div class="divCanal">
+                        <h3>Horário</h3>
+                        <p>Segunda a sábado<br />das 8h às 18h</p>
+                    </div>
+                </div><!-- Fim divLinha -->
+                <p class="pNota">Contatos de exemplo do projeto.</p>
+            </article><!--Fim canais-->
+            <article class="articleSecao"><!--Inicio formulários-->
+                <div class="divDuas">
+                    <div class="boxForm">
+                        <h2>Envie sua mensagem</h2>
+                        <form id="formSac">
+                        <label for="sNome">Nome</label>
+                            <input class="campo" type="text" id="sNome"  />
+                        <label for="sEmail">E-mail</label>
+                            <input class="campo" type="email" id="sEmail"  />
+                        <label for="sTel">Telefone (opcional)</label>
+                            <input class="campo" type="tel" id="sTel"  />
+                        <label for="sAssunto">Assunto</label>
+                        <select class="campo" id="sAssunto">
+                            <option value="">Escolha o assunto</option>
+                            <option value="Dúvida sobre produto">Dúvida sobre produto</option><option value="Pedido e entrega">Pedido e entrega</option><option value="Troca ou devolução">Troca ou devolução</option><option value="Pagamento">Pagamento</option><option value="Problema no site">Problema no site</option><option value="Elogio">Elogio</option><option value="Sugestão">Sugestão</option><option value="Reclamação">Reclamação</option>
+                        </select>
+                        <label for="sPedido">Número do pedido (se tiver)</label>
+                            <input class="campo" type="text" id="sPedido"  />
+                        <label for="sMensagem">Mensagem</label>
+                        <textarea class="campo" id="sMensagem"></textarea>
+                        <p id="msgSac" class="msg"></p>
+                        <button type="submit" class="btnForm">Enviar mensagem</button>
+                        </form>
+                    </div>
+                    <div class="boxForm">
+                        <h2>Acompanhe seu atendimento</h2>
+                        <p>Digite o número do protocolo que você recebeu ao enviar a mensagem.</p>
+                        <form id="formProtocolo">
+                        <label for="pProtocolo">Protocolo</label>
+                            <input class="campo" type="text" id="pProtocolo" placeholder="Ex.: SAC2026123456" />
+                        <button type="submit" class="btnForm">Consultar</button>
+                        <p id="msgProtocolo" class="msg"></p>
+                        </form>
+                        <p class="pNota">Simulação: as mensagens ficam salvas só neste navegador.</p>
+                    </div>
+                </div>
+            </article><!--Fim formulários-->
+            <article class="articleSecao"><!--Inicio perguntas-->
+                <h2 class="h2">Perguntas frequentes</h2>
+                <hr class="hrTitulo" align="center" />
+
+            </article>
+            <section class="sectionBloco"><!--Inicio sectionBloco-->
+                <details class="detalhesBloco">
+                    <summary>
+                        <span class="hLeft">Como faço para comprar?</span>
+                    </summary>
+                    <p class="pText">Escolha uma categoria, abra o tipo de produto, selecione o tamanho e clique em Adicionar ao carrinho. No carrinho, confira os itens, escolha a forma de pagamento e finalize a compra com a sua conta.</p>
+                </details>
+                <details class="detalhesBloco">
+                    <summary>
+                        <span class="hLeft">Quais são as formas de pagamento?</span>
+                    </summary>
+                    <p class="pText">Pix (com 5% de desconto), cartão de crédito em até 6x sem juros, cartão de débito e boleto bancário.</p>
+                </details>
+                <details class="detalhesBloco">
+                    <summary>
+                        <span class="hLeft">Qual o valor e o prazo do frete?</span>
+                    </summary>
+                    <p class="pText">O frete é grátis em compras acima de R$ 299,00. Abaixo desse valor, o frete é de R$ 29,90. O prazo de entrega varia de 3 a 10 dias úteis, conforme a região.</p>
+                </details>
+                <details class="detalhesBloco">
+                    <summary>
+                        <span class="hLeft">Como faço para trocar ou devolver?</span>
+                    </summary>
+                    <p class="pText">Você tem até 30 dias após o recebimento para pedir a troca. O produto deve estar sem uso e com etiqueta. Abra um atendimento aqui no SAC informando o número do pedido.</p>
+                </details>
+                <details class="detalhesBloco">
+                    <summary>
+                        <span class="hLeft">Como escolho o tamanho certo?</span>
+                    </summary>
+                    <p class="pText">Cada produto mostra os tamanhos disponíveis antes de ir para o carrinho. Se ficar com dúvida, fale com a gente no SAC que ajudamos a escolher.</p>
+                </details>
+                <details class="detalhesBloco">
+                    <summary>
+                        <span class="hLeft">Como acompanho meu pedido?</span>
+                    </summary>
+                    <p class="pText">Entre em Minha conta e veja a lista de Meus pedidos. Os atendimentos do SAC também ficam salvos lá.</p>
+                </details>
+            </section><!--Fim sectionBloco-->
+        </section><!--Fim sectionMeio-->
+        <div id="divFooter"><!-- Inicio divFooter -->
+            <div class="divLinha"><!-- Inicio divLinha -->
+                <div class="divColFooter">
+                    <p>
+                        <img id="logoFooter" src="../img/logo-branco.png" alt="Logomarca Estância Gaúcha"
+                            title="Estância Gaúcha" />
+                    </p>
+                    <p>Tradição gaúcha em um só lugar: pilcha, chapelaria, chimarrão, churrasco e selaria.</p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Categorias</h3>
+                    <p>
+                        <a href="./pilcha-masculina.html">Pilcha Masculina</a><br />
+                        <a href="./pilcha-feminina.html">Pilcha Feminina</a><br />
+                        <a href="./pilcha-infantil.html">Pilcha Infantil</a><br />
+                        <a href="./chapelaria.html">Chapelaria</a><br />
+                        <a href="./chimarrao.html">Chimarrão</a><br />
+                        <a href="./churrasco.html">Churrasco</a><br />
+                        <a href="./selaria.html">Selaria</a><br />
+                    </p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Atendimento</h3>
+                    <p>
+                        <a href="./produtos.html">Todos os produtos</a><br />
+                        <a href="./fale-conosco.html">Fale conosco (SAC)</a><br />
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho</a><br />
+                        Segunda a sábado, das 8h às 18h
+                    </p>
+                </div>
+            </div><!-- Fim divLinha -->
+            <p id="pDireitos">
+                © Estância Gaúcha - Projeto PI - Todos os direitos reservados
+            </p>
+        </div><!-- Fim divFooter-->
+    </main>
+    <script src="../js/comum.js" data-raiz="../"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/sac.js"></script>
+</body>
+
+</html>

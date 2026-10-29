@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Estância Gaúcha | Minha conta</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <div id="divTopo">Frete grátis acima de R$ 299,00 | Parcele em até 6x sem juros | Troca em até 30 dias</div>
+            <section id="cabecalho">
+                <div id="cabecalhoEsq"><!-- Inicio div cabecalhoEsq-->
+                    <p class="p1">
+                        <a href="../index.html">
+                            <img id="logoEstancia" src="../img/logo-escura.png" alt="Logomarca Estância Gaúcha"
+                                title="Estância Gaúcha" />
+                        </a>
+                    </p>
+                </div><!-- Fim div cabecalhoEsq-->
+                <div id="cabecalhoMeio"><!-- Inicio div cabecalhoMeio-->
+                    <p id="pBuscaMeio">
+                        <input type="text" id="campoBusca" placeholder="O que você procura? Ex.: cuia, bombacha, chapéu" />
+                        <button id="btnBusca">Buscar</button>
+                    </p>
+                </div><!-- Fim div cabecalhoMeio-->
+                <div id="cabecalhoDir"><!-- Inicio div cabecalhoDir-->
+                    <p id="pLinksDir">
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho (<span id="contadorCarrinho">0</span>)</a>
+                    </p>
+                </div><!-- Fim div cabecalhoDir-->
+            </section>
+        </header>
+        <nav id="navSup">
+            <a class="linkMenu" href="./pilcha-masculina.html">Pilcha Masculina</a>
+            <a class="linkMenu" href="./pilcha-feminina.html">Pilcha Feminina</a>
+            <a class="linkMenu" href="./pilcha-infantil.html">Pilcha Infantil</a>
+            <a class="linkMenu" href="./chapelaria.html">Chapelaria</a>
+            <a class="linkMenu" href="./chimarrao.html">Chimarrão</a>
+            <a class="linkMenu" href="./churrasco.html">Churrasco</a>
+            <a class="linkMenu" href="./selaria.html">Selaria</a>
+            <a class="linkMenu" href="./produtos.html">Todos os produtos</a>
+            <a class="linkMenu" href="./fale-conosco.html">Fale conosco</a>
+        </nav>
+        <section id="sectionMeio"><!--Inicio sectionMeio-->
+            <article class="bannerCategoria" id="bannerProdutos"><!--Inicio banner-->
+                <h1>Minha conta</h1>
+                <p>Entre ou crie sua conta para finalizar compras e acompanhar seus pedidos.</p>
+            </article><!--Fim banner-->
+            <p class="pCaminho"><a href="../index.html">Início</a> &gt; Minha conta</p>
+            <article class="articleSecao" id="areaConta"><!--Inicio areaConta-->
+                <div id="painelEntrar" class="oculto"><!--Inicio painelEntrar-->
+                    <div class="divDuas">
+                        <div class="boxForm">
+                            <h2>Já tenho conta</h2>
+                            <form id="formLogin">
+                            <label for="lEmail">E-mail</label>
+                            <input class="campo" type="email" id="lEmail"  />
+                            <label for="lSenha">Senha</label>
+                            <input class="campo" type="password" id="lSenha"  />
+                            <p id="msgLogin" class="msg"></p>
+                            <button type="submit" class="btnForm">Entrar</button>
+                            </form>
+                        </div>
+                        <div class="boxForm">
+                            <h2>Criar conta</h2>
+                            <form id="formCadastro">
+                            <label for="cNome">Nome completo</label>
+                            <input class="campo" type="text" id="cNome"  />
+                            <label for="cEmail">E-mail</label>
+                            <input class="campo" type="email" id="cEmail"  />
+                            <label for="cTel">Telefone (opcional)</label>
+                            <input class="campo" type="tel" id="cTel"  />
+                            <label for="cSenha">Senha (mínimo 6 caracteres)</label>
+                            <input class="campo" type="password" id="cSenha"  />
+                            <label for="cSenha2">Repita a senha</label>
+                            <input class="campo" type="password" id="cSenha2"  />
+                            <p id="msgCadastro" class="msg"></p>
+                            <button type="submit" class="btnForm">Criar minha conta</button>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="pNota">Projeto de simulação: os dados ficam salvos só neste navegador. Não use sua senha verdadeira.</p>
+                </div><!--Fim painelEntrar-->
+                <div id="painelConta" class="oculto"><!--Inicio painelConta-->
+                    <p id="boasVindas" class="pText"></p>
+                    <div class="divDuas">
+                        <div class="boxForm">
+                            <h2>Meus dados</h2>
+                            <form id="formDados">
+                            <label for="dNome">Nome completo</label>
+                            <input class="campo" type="text" id="dNome"  />
+                            <label for="dEmail">E-mail</label>
+                            <input class="campo" type="email" id="dEmail" readonly />
+                            <label for="dTel">Telefone</label>
+                            <input class="campo" type="tel" id="dTel"  />
+                            <label for="dCep">CEP</label>
+                            <input class="campo" type="text" id="dCep"  />
+                            <label for="dRua">Rua</label>
+                            <input class="campo" type="text" id="dRua"  />
+                            <label for="dNumero">Número</label>
+                            <input class="campo" type="text" id="dNumero"  />
+                            <label for="dBairro">Bairro</label>
+                            <input class="campo" type="text" id="dBairro"  />
+                            <label for="dCidade">Cidade</label>
+                            <input class="campo" type="text" id="dCidade"  />
+                            <label for="dUf">Estado (UF)</label>
+                            <input class="campo" type="text" id="dUf" maxlength="2" />
+                            <p id="msgDados" class="msg"></p>
+                            <button type="submit" class="btnForm">Salvar dados</button>
+                            </form>
+                        </div>
+                        <div class="boxForm">
+                            <h2>Meus atendimentos</h2>
+                            <table class="tabelaPrecos" width="100%" border="1">
+                                <thead>
+                                    <tr>
+                                        <td align="center"><h3>Protocolo</h3></td>
+                                        <td align="center"><h3>Assunto</h3></td>
+                                        <td align="center"><h3>Situação</h3></td>
+                                    </tr>
+                                </thead>
+                                <tbody id="corpoAtendimentos"></tbody>
+                            </table>
+                            <p class="pText"><a class="linkTabela" href="./fale-conosco.html">Abrir um novo atendimento</a></p>
+                            <h3>Sair da conta</h3>
+                            <button class="btnForm" id="btnSair">Sair</button>
+                        </div>
+                    </div>
+                    <h2 class="h2">Meus pedidos</h2>
+                    <hr class="hrTitulo" align="center" />
+                    <table class="tabelaPrecos" align="center" width="90%" border="1">
+                        <thead>
+                            <tr>
+                                <td align="center"><h3>Pedido</h3></td>
+                                <td align="center"><h3>Data</h3></td>
+                                <td align="center"><h3>Itens</h3></td>
+                                <td align="center"><h3>Pagamento</h3></td>
+                                <td align="center"><h3>Total</h3></td>
+                            </tr>
+                        </thead>
+                        <tbody id="corpoPedidos"></tbody>
+                    </table>
+                </div><!--Fim painelConta-->
+            </article><!--Fim areaConta-->
+        </section><!--Fim sectionMeio-->
+        <div id="divFooter"><!-- Inicio divFooter -->
+            <div class="divLinha"><!-- Inicio divLinha -->
+                <div class="divColFooter">
+                    <p>
+                        <img id="logoFooter" src="../img/logo-branco.png" alt="Logomarca Estância Gaúcha"
+                            title="Estância Gaúcha" />
+                    </p>
+                    <p>Tradição gaúcha em um só lugar: pilcha, chapelaria, chimarrão, churrasco e selaria.</p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Categorias</h3>
+                    <p>
+                        <a href="./pilcha-masculina.html">Pilcha Masculina</a><br />
+                        <a href="./pilcha-feminina.html">Pilcha Feminina</a><br />
+                        <a href="./pilcha-infantil.html">Pilcha Infantil</a><br />
+                        <a href="./chapelaria.html">Chapelaria</a><br />
+                        <a href="./chimarrao.html">Chimarrão</a><br />
+                        <a href="./churrasco.html">Churrasco</a><br />
+                        <a href="./selaria.html">Selaria</a><br />
+                    </p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Atendimento</h3>
+                    <p>
+                        <a href="./produtos.html">Todos os produtos</a><br />
+                        <a href="./fale-conosco.html">Fale conosco (SAC)</a><br />
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho</a><br />
+                        Segunda a sábado, das 8h às 18h
+                    </p>
+                </div>
+            </div><!-- Fim divLinha -->
+            <p id="pDireitos">
+                © Estância Gaúcha - Projeto PI - Todos os direitos reservados
+            </p>
+        </div><!-- Fim divFooter-->
+    </main>
+    <script src="../js/comum.js" data-raiz="../"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/conta.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Estância Gaúcha | Carrinho</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <div id="divTopo">Frete grátis acima de R$ 299,00 | Parcele em até 6x sem juros | Troca em até 30 dias</div>
+            <section id="cabecalho">
+                <div id="cabecalhoEsq"><!-- Inicio div cabecalhoEsq-->
+                    <p class="p1">
+                        <a href="../index.html">
+                            <img id="logoEstancia" src="../img/logo-escura.png" alt="Logomarca Estância Gaúcha"
+                                title="Estância Gaúcha" />
+                        </a>
+                    </p>
+                </div><!-- Fim div cabecalhoEsq-->
+                <div id="cabecalhoMeio"><!-- Inicio div cabecalhoMeio-->
+                    <p id="pBuscaMeio">
+                        <input type="text" id="campoBusca" placeholder="O que você procura? Ex.: cuia, bombacha, chapéu" />
+                        <button id="btnBusca">Buscar</button>
+                    </p>
+                </div><!-- Fim div cabecalhoMeio-->
+                <div id="cabecalhoDir"><!-- Inicio div cabecalhoDir-->
+                    <p id="pLinksDir">
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho (<span id="contadorCarrinho">0</span>)</a>
+                    </p>
+                </div><!-- Fim div cabecalhoDir-->
+            </section>
+        </header>
+        <nav id="navSup">
+            <a class="linkMenu" href="./pilcha-masculina.html">Pilcha Masculina</a>
+            <a class="linkMenu" href="./pilcha-feminina.html">Pilcha Feminina</a>
+            <a class="linkMenu" href="./pilcha-infantil.html">Pilcha Infantil</a>
+            <a class="linkMenu" href="./chapelaria.html">Chapelaria</a>
+            <a class="linkMenu" href="./chimarrao.html">Chimarrão</a>
+            <a class="linkMenu" href="./churrasco.html">Churrasco</a>
+            <a class="linkMenu" href="./selaria.html">Selaria</a>
+            <a class="linkMenu" href="./produtos.html">Todos os produtos</a>
+            <a class="linkMenu" href="./fale-conosco.html">Fale conosco</a>
+        </nav>
+        <section id="sectionMeio"><!--Inicio sectionMeio-->
+            <article class="bannerCategoria" id="bannerProdutos"><!--Inicio banner-->
+                <h1>Meu carrinho</h1>
+                <p>Confira os produtos, escolha a forma de pagamento e finalize a compra.</p>
+            </article><!--Fim banner-->
+            <p class="pCaminho"><a href="../index.html">Início</a> &gt; Meu carrinho</p>
+            <article class="articleSecao" id="areaCarrinho"><!--Inicio areaCarrinho-->
+                <div id="carrinhoVazio" class="divAviso oculto"><!--Inicio carrinhoVazio-->
+                    <h2>Seu carrinho está vazio</h2>
+                    <p class="pText">Que tal conhecer nossos produtos?</p>
+                    <a class="btnComprar" href="./produtos.html">Ver todos os produtos</a>
+                </div><!--Fim carrinhoVazio-->
+                <div id="carrinhoCheio" class="divCarrinho oculto"><!--Inicio carrinhoCheio-->
+                    <div id="divItensCarrinho">
+                        <table class="tabelaPrecos" width="100%" border="1">
+                            <thead>
+                                <tr>
+                                    <td align="center"><h3>Produto</h3></td>
+                                    <td align="center"><h3>Tamanho</h3></td>
+                                    <td align="center"><h3>Preço</h3></td>
+                                    <td align="center"><h3>Quantidade</h3></td>
+                                    <td align="center"><h3>Subtotal</h3></td>
+                                    <td align="center"><h3>Remover</h3></td>
+                                </tr>
+                            </thead>
+                            <tbody id="corpoCarrinho">
+                            </tbody>
+                        </table>
+                        <p class="divAcoesCarrinho">
+                            <a class="btnCategoria" href="./produtos.html">Continuar comprando</a>
+                            <button class="btnRemover" id="btnEsvaziar">Esvaziar carrinho</button>
+                        </p>
+                    </div>
+                    <div id="divResumo">
+                        <h3>Resumo do pedido</h3>
+                        <p class="linhaResumo"><span>Subtotal</span><span id="valSubtotal">R$ 0,00</span></p>
+                        <p class="linhaResumo"><span>Desconto Pix (5%)</span><span id="valDesconto">- R$ 0,00</span></p>
+                        <p class="linhaResumo"><span>Frete</span><span id="valFrete">Grátis</span></p>
+                        <p class="linhaResumo totalResumo"><span>Total</span><span id="valTotal">R$ 0,00</span></p>
+                        <h3>Forma de pagamento</h3>
+                        <label class="opcaoPagamento"><input type="radio" name="pagamento" value="pix" checked /> Pix (5% de desconto)</label>
+                        <label class="opcaoPagamento"><input type="radio" name="pagamento" value="credito" /> Cartão de crédito</label>
+                        <label class="opcaoPagamento"><input type="radio" name="pagamento" value="debito" /> Cartão de débito</label>
+                        <label class="opcaoPagamento"><input type="radio" name="pagamento" value="boleto" /> Boleto bancário</label>
+                        <p id="boxParcelas" class="oculto">
+                            <select id="selParcelas" class="campo"></select>
+                        </p>
+                        <p id="infoPagamento"></p>
+                        <button id="btnFinalizar">Finalizar compra</button>
+                        <p id="msgFinalizar" class="msg"></p>
+                        <p class="pNota">Frete grátis acima de R$ 299,00 (abaixo: R$ 29,90). Simulação: nenhum pagamento real é feito.</p>
+                    </div>
+                </div><!--Fim carrinhoCheio-->
+                <div id="pedidoFinalizado" class="divAviso oculto"><!--Inicio pedidoFinalizado-->
+                    <h2>Pedido realizado!</h2>
+                    <p class="pText">Número do pedido: <b id="numPedido"></b></p>
+                    <div id="resumoFinal"></div>
+                    <p class="pText">Acompanhe em <a class="linkTabela" href="./conta.html">Minha conta</a>. Dúvidas? Fale com a gente no <a class="linkTabela" href="./fale-conosco.html">SAC</a>.</p>
+                    <a class="btnComprar" href="./produtos.html">Continuar comprando</a>
+                </div><!--Fim pedidoFinalizado-->
+            </article><!--Fim areaCarrinho-->
+        </section><!--Fim sectionMeio-->
+        <div id="divFooter"><!-- Inicio divFooter -->
+            <div class="divLinha"><!-- Inicio divLinha -->
+                <div class="divColFooter">
+                    <p>
+                        <img id="logoFooter" src="../img/logo-branco.png" alt="Logomarca Estância Gaúcha"
+                            title="Estância Gaúcha" />
+                    </p>
+                    <p>Tradição gaúcha em um só lugar: pilcha, chapelaria, chimarrão, churrasco e selaria.</p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Categorias</h3>
+                    <p>
+                        <a href="./pilcha-masculina.html">Pilcha Masculina</a><br />
+                        <a href="./pilcha-feminina.html">Pilcha Feminina</a><br />
+                        <a href="./pilcha-infantil.html">Pilcha Infantil</a><br />
+                        <a href="./chapelaria.html">Chapelaria</a><br />
+                        <a href="./chimarrao.html">Chimarrão</a><br />
+                        <a href="./churrasco.html">Churrasco</a><br />
+                        <a href="./selaria.html">Selaria</a><br />
+                    </p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Atendimento</h3>
+                    <p>
+                        <a href="./produtos.html">Todos os produtos</a><br />
+                        <a href="./fale-conosco.html">Fale conosco (SAC)</a><br />
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho</a><br />
+                        Segunda a sábado, das 8h às 18h
+                    </p>
+                </div>
+            </div><!-- Fim divLinha -->
+            <p id="pDireitos">
+                © Estância Gaúcha - Projeto PI - Todos os direitos reservados
+            </p>
+        </div><!-- Fim divFooter-->
+    </main>
+    <script src="../js/comum.js" data-raiz="../"></script>
+    <script src="../js/carrinho.js"></script>
+</body>
+
+</html>
