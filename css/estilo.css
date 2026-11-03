@@ -12,6 +12,9 @@ body{
 a{
     color: #321b0e;
 }
+img{
+    max-width: 100%;
+}
 h1, h2, h3{
     font-family: 'Cinzel', serif;
 }
@@ -60,7 +63,7 @@ h1, h2, h3{
 }
 #pBuscaMeio{
     text-align: center;
-    margin-top: 6%;
+    margin-top: 4%;
 }
 #pLinksDir{
     text-align: right;
@@ -250,12 +253,14 @@ h1, h2, h3{
     width: 94%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #divBeneficios{
     margin-top: 2.5%;
 }
 .divCardCat{
-    width: 23%;
+    width: 22%;
     margin: 1%;
     border-radius: 8px;
     background-color: #321b0e;
@@ -287,7 +292,7 @@ h1, h2, h3{
     font-size: 14px;
 }
 .divProduto{
-    width: 23%;
+    width: 22%;
     margin: 1%;
     border: 2px solid #321b0e;
     border-radius: 8px;
@@ -296,6 +301,14 @@ h1, h2, h3{
 }
 .divProduto:hover{
     border-color: #1F4d2b;
+}
+.divProduto[id]{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.divProduto[id]:hover{
+    transform: scale(1.06);
+    z-index: 5;
+    box-shadow: 0 10px 25px rgba(50, 27, 14, 0.45);
 }
 .divProduto img{
     width: 100%;
@@ -799,7 +812,9 @@ textarea.campo{
     margin-bottom: 6px;
 }
 
-/* ---------- Telas menores ---------- */
+/* ============ RESPONSIVIDADE ============ */
+
+/* Notebooks pequenos e tablets na horizontal */
 @media all and (max-width: 1000px){
     #tituloBanner{
         font-size: 34px;
@@ -812,6 +827,8 @@ textarea.campo{
         padding: 10px 10px;
     }
 }
+
+/* Tablets: 2 cards por linha */
 @media all and (max-width: 850px){
     #pBuscaMeio{
         margin-top: 2%;
@@ -822,51 +839,18 @@ textarea.campo{
         margin-top: 2%;
         margin-right: 0;
     }
-    .divLinha{
-        display: block;
-    }
-    .divBeneficio{
-        width: 90%;
-        margin: 10px auto;
-    }
-    .divCardCat, .divProduto{
-        width: 80%;
-        margin: 14px auto;
-    }
-    .divColFooter{
-        width: 90%;
-        margin: 14px auto;
-    }
     #divTextoBanner{
         width: 86%;
         margin-left: 7%;
     }
-}
-@media all and (max-width: 600px){
-    #tituloBanner{
-        font-size: 27px;
-    }
-    .bannerCategoria h1{
-        font-size: 28px;
-    }
-    .linkMenu{
-        display: block;
-    }
-    #campoBusca{
-        width: 58%;
-    }
     .divCardCat, .divProduto{
-        width: 92%;
+        width: 45%;
+        margin: 2%;
     }
-    .tabelaPrecos{
-        font-size: 13px;
+    .divBeneficio, .divCanal, .divColFooter{
+        width: 90%;
+        margin: 10px auto;
     }
-    .tabelaPrecos td{
-        padding: 6px;
-    }
-}
-
-@media all and (max-width: 850px){
     .divCarrinho, .divDuas{
         display: block;
     }
@@ -878,16 +862,149 @@ textarea.campo{
         width: 90%;
         margin: 14px auto;
     }
-    .divCanal{
-        width: 90%;
-        margin: 10px auto;
-    }
     .divAviso{
         width: 90%;
     }
+    .h2{
+        font-size: 26px;
+    }
+    .h3Sub{
+        font-size: 20px;
+    }
 }
+
+/* Celulares */
 @media all and (max-width: 600px){
+    #tituloBanner{
+        font-size: 27px;
+    }
+    .pBanner{
+        font-size: 16px;
+    }
+    .bannerCategoria h1{
+        font-size: 28px;
+    }
+    .bannerCategoria p{
+        font-size: 16px;
+    }
+    .linkMenu{
+        display: inline-block;
+        width: 46%;
+        font-size: 13px;
+        padding: 10px 4px;
+    }
+    #campoBusca{
+        width: 58%;
+    }
     .imgCarrinho{
         width: 44px;
+    }
+    .tabelaPrecos{
+        display: block;
+        overflow-x: auto;
+        font-size: 13px;
+    }
+    .tabelaPrecos td{
+        padding: 6px;
+    }
+    .boxForm{
+        padding: 16px;
+    }
+    .divAviso{
+        padding: 18px;
+    }
+    #avisoCarrinho{
+        left: 15px;
+        right: 15px;
+    }
+    .hLeft{
+        font-size: 18px;
+    }
+}
+
+/* Celulares pequenos: 1 card por linha */
+@media all and (max-width: 480px){
+    .divCardCat, .divProduto{
+        width: 92%;
+        margin: 14px auto;
+    }
+}
+
+/* ============ CARROSSEL DE DESTAQUES (página inicial) ============ */
+#carrossel{
+    width: 96%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+#janelaCarrossel{
+    flex: 1;
+    overflow: hidden;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+#trilhoCarrossel{
+    display: flex;
+    transition: transform 0.6s ease;
+}
+#trilhoCarrossel .divProduto{
+    position: relative;
+    flex: 0 0 22%;
+    width: 22%;
+    margin: 0 1.5%;
+}
+
+/* Selo "DESTAQUE" no canto de cada card */
+#trilhoCarrossel .divProduto::before{
+    content: "DESTAQUE";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #321b0e;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* Setinhas */
+.setaCarrossel{
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    color: #321b0e;
+    background-color: #FFFFFF;
+    border: 2px solid #321b0e;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.setaCarrossel:hover{
+    background-color: #1F4d2b;
+    border-color: #1F4d2b;
+    color: #FFFFFF;
+}
+
+/* Tablet: 2 cards na janela */
+@media all and (max-width: 850px){
+    #trilhoCarrossel .divProduto{
+        flex: 0 0 45%;
+        width: 45%;
+        margin: 0 2.5%;
+    }
+}
+/* Celular: 1 card na janela */
+@media all and (max-width: 480px){
+    #trilhoCarrossel .divProduto{
+        flex: 0 0 90%;
+        width: 90%;
+        margin: 0 5%;
+    }
+    .setaCarrossel{
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
     }
 }
