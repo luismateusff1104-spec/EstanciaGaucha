@@ -12,7 +12,7 @@
        var cards = trilho.children;      // os cards de produto
        var indice = 0;                   // posição atual (0 = primeiro card)
        var temporizador;                 // guarda o "relógio" do automático
-       var TEMPO = 3500;                 // tempo entre cada passada (3,5 segundos)
+       var TEMPO = 3000;                 // tempo entre cada passada (3 segundos)
    
        // Calcula quanto o trilho anda por vez e até onde pode ir
        function medidas() {

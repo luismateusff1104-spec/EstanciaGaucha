@@ -106,16 +106,16 @@ h1, h2, h3{
 
 /* ---------- Banner da página inicial ---------- */
 #articleBannerSup{
-    background-image: url(../img/banners/banner-home.jpg);
+    background-image: url(../img/banners/banner1.png);
     background-size: cover;
     background-color: #321b0e;
     color: #FFFFFF;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 10%;
+    padding-bottom: 20%;
 }
 #divTextoBanner{
     width: 48%;
-    margin-left: 7%;
+    margin-left: 3%;
 }
 #logoBanner{
     width: 150px;
@@ -1006,5 +1006,146 @@ textarea.campo{
         width: 34px;
         height: 34px;
         font-size: 14px;
+    }
+}
+
+/* ---------- Sugestões da busca ---------- */
+#pBuscaMeio{
+    position: relative;
+}
+#caixaSugestoes{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin-top: 4px;
+    padding: 12px 16px 16px 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #d9d2cc;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(50, 27, 14, 0.18);
+    text-align: left;
+}
+#caixaSugestoes .listaTermos{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#caixaSugestoes .termoSug{
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+#caixaSugestoes .termoSug:hover{
+    background-color: #f1ece7;
+}
+#caixaSugestoes .tituloSugestoes{
+    margin: 12px 0 10px 0;
+    padding-top: 12px;
+    border-top: 1px solid #e6e0db;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+#caixaSugestoes .gradeSugestoes{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+#caixaSugestoes .produtoSug{
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 6px;
+}
+#caixaSugestoes .produtoSug:hover{
+    background-color: #f1ece7;
+}
+#caixaSugestoes .produtoSug img{
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+#caixaSugestoes .produtoSug span,
+#caixaSugestoes .produtoSug strong{
+    display: block;
+}
+#caixaSugestoes .produtoSug strong{
+    color: #1F4d2b;
+    margin-top: 4px;
+}
+@media all and (max-width: 600px){
+    #caixaSugestoes .gradeSugestoes{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #caixaSugestoes .produtoSug:nth-child(n+4){
+        display: none;
+    }
+}
+
+/* ---------- Minha conta e Carrinho (cabeçalho) ---------- */
+#pLinksDir{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 26px;
+}
+#pLinksDir br{
+    display: none;
+}
+#pLinksDir a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+#pLinksDir a:hover{
+    text-decoration: none;
+}
+#pLinksDir .iconeCabecalho{
+    display: flex;
+}
+#pLinksDir .contaTextos{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.2;
+}
+#pLinksDir .contaTextos small{
+    font-size: 13px;
+    font-weight: 400;
+}
+#pLinksDir .contaTextos strong{
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+#pLinksDir .linkCarrinho{
+    position: relative;
+}
+#pLinksDir #contadorCarrinho{
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    border-radius: 11px;
+    background-color: #1F4d2b;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+@media all and (max-width: 850px){
+    #pLinksDir{
+        justify-content: center;
     }
 }
