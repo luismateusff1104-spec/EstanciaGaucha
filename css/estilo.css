@@ -166,6 +166,7 @@ h1, h2, h3{
 
 /* ---------- Banners das categorias ---------- */
 .bannerCategoria{
+    box-sizing: border-box;
     background-size: cover;
     background-color: #321b0e;
     color: #FFFFFF;
@@ -1163,4 +1164,10 @@ textarea.campo{
     #pLinksDir{
         justify-content: center;
     }
+}
+.linkNomeProduto{
+    text-decoration: none;
+}
+.linkNomeProduto:hover{
+    text-decoration: underline;
 }

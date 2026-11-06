@@ -511,8 +511,7 @@ function procurarTermos(digitado) {
 
 // Endereço da página do produto: pasta/subpasta/arquivo -> pages/pasta/subpasta.html#arquivo
 function linkProduto(pasta) {
-    var p = pasta.split('/');
-    return raiz + 'pages/' + p[0] + '/' + p[1] + '.html#' + p[2];
+    return raiz + 'pages/produto.html?id=' + pasta;
 }
 
 // Desenha a caixa de sugestões
@@ -609,6 +608,21 @@ function montarCarrinhoCabecalho() {
         '<span id="contadorCarrinho">' + contador.textContent + '</span>';
 }
 
+function ligarCartoesAoProduto() {
+    var cards = document.querySelectorAll('.divProduto');
+    for (var i = 0; i < cards.length; i++) {
+        var botao = cards[i].querySelector('.btnAdd');
+        if (!botao) { continue; }
+        var link = raiz + 'pages/produto.html?id=' + botao.getAttribute('data-id');
+        var foto = cards[i].querySelector('a');
+        if (foto) { foto.href = link; }
+        var nome = cards[i].querySelector('.nomeProduto');
+        if (nome) {
+            nome.innerHTML = '<a class="linkNomeProduto" href="' + link + '">' + nome.innerHTML + '</a>';
+        }
+    }
+}
 
 atualizarCabecalhoConta();
 montarCarrinhoCabecalho();
+ligarCartoesAoProduto();

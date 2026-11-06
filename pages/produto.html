@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Estância Gaúcha | Produto</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Roboto:wght@400;700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../css/produto.css" />
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <div id="divTopo">Frete grátis acima de R$ 299,00 | Parcele em até 6x sem juros | Troca em até 30 dias</div>
+            <section id="cabecalho">
+                <div id="cabecalhoEsq"><!-- Inicio div cabecalhoEsq-->
+                    <p class="p1">
+                        <a href="../index.html">
+                            <img id="logoEstancia" src="../img/logo-escura.png" alt="Logomarca Estância Gaúcha"
+                                title="Estância Gaúcha" />
+                        </a>
+                    </p>
+                </div><!-- Fim div cabecalhoEsq-->
+                <div id="cabecalhoMeio"><!-- Inicio div cabecalhoMeio-->
+                    <p id="pBuscaMeio">
+                        <input type="text" id="campoBusca" placeholder="O que você procura? Ex.: cuia, bombacha, chapéu" />
+                        <button id="btnBusca">Buscar</button>
+                    </p>
+                </div><!-- Fim div cabecalhoMeio-->
+                <div id="cabecalhoDir"><!-- Inicio div cabecalhoDir-->
+                    <p id="pLinksDir">
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho (<span id="contadorCarrinho">0</span>)</a>
+                    </p>
+                </div><!-- Fim div cabecalhoDir-->
+            </section>
+        </header>
+        <nav id="navSup">
+            <a class="linkMenu" href="./pilcha-masculina.html">Pilcha Masculina</a>
+            <a class="linkMenu" href="./pilcha-feminina.html">Pilcha Feminina</a>
+            <a class="linkMenu" href="./pilcha-infantil.html">Pilcha Infantil</a>
+            <a class="linkMenu" href="./chapelaria.html">Chapelaria</a>
+            <a class="linkMenu" href="./chimarrao.html">Chimarrão</a>
+            <a class="linkMenu" href="./churrasco.html">Churrasco</a>
+            <a class="linkMenu" href="./selaria.html">Selaria</a>
+            <a class="linkMenu" href="./produtos.html">Todos os produtos</a>
+            <a class="linkMenu" href="./fale-conosco.html">Fale conosco</a>
+        </nav>
+        <section id="sectionMeio"><!--Inicio sectionMeio-->
+            <p class="pCaminho" id="pCaminhoProduto"><a href="../index.html">Início</a></p>
+
+            <!-- Produto que não existe -->
+            <article id="produtoNaoEncontrado" class="articleSecao oculto">
+                <h2 class="h2">Produto não encontrado</h2>
+                <hr class="hrTitulo" align="center" />
+                <p class="pText">Não achamos este produto. <a href="./produtos.html">Veja todos os produtos</a>.</p>
+            </article>
+
+            <!-- Foto, preço e compra -->
+            <article id="detalheProduto"><!--Inicio detalheProduto-->
+                <div id="colGaleria">
+                    <div id="zoomCaixa">
+                        <img id="imgProduto" src="" alt="" />
+                    </div>
+                    <p id="dicaZoom">Passe o mouse sobre a foto para ampliar</p>
+                </div>
+
+                <div id="colInfo">
+                    <h1 id="nomeProduto"></h1>
+                    <p id="codigoProduto"></p>
+                    <p id="resumoEstrelas"></p>
+
+                    <div id="blocoCores">
+                        <p class="rotuloOpcao">Cor: <b id="corEscolhida"></b></p>
+                        <div id="listaCores"></div>
+                    </div>
+
+                    <div id="blocoTamanho">
+                        <p class="rotuloOpcao">Tamanho:</p>
+                        <div id="listaTamanhos"></div>
+                    </div>
+
+                    <p id="precoProduto"></p>
+                    <p id="precoAvista"></p>
+                    <p id="precoParcela"></p>
+                    <p id="avisoFreteGratis"></p>
+
+                    <div id="linhaCompra">
+                        <div id="boxQuantidade">
+                            <button type="button" id="btnMenos" aria-label="Diminuir">-</button>
+                            <span id="numQuantidade">1</span>
+                            <button type="button" id="btnMais" aria-label="Aumentar">+</button>
+                        </div>
+                        <button type="button" id="btnAdicionar" class="btnComprar">Adicionar ao carrinho</button>
+                    </div>
+                    <p id="msgCompra" class="msg"></p>
+                    <button type="button" id="btnWhats">Comprar pelo WhatsApp</button>
+
+                    <div id="blocoFrete">
+                        <p class="rotuloOpcao">Frete e prazo de entrega</p>
+                        <div id="linhaCep">
+                            <input type="text" id="campoCep" placeholder="Informe seu CEP" maxlength="9" inputmode="numeric" />
+                            <button type="button" id="btnCep">Calcular</button>
+                        </div>
+                        <p id="resultadoFrete" class="msg"></p>
+                    </div>
+                </div>
+            </article><!--Fim detalheProduto-->
+
+            <!-- Descrição, pagamento e avaliações -->
+            <article id="abasProduto" class="articleSecao"><!--Inicio abas-->
+                <div id="listaAbas">
+                    <button type="button" class="abaBtn" data-aba="descricao">Descrição Geral</button>
+                    <button type="button" class="abaBtn" data-aba="pagamento">Formas de Pagamento</button>
+                    <button type="button" class="abaBtn" data-aba="avaliacoes">Avaliações</button>
+                </div>
+                <div class="abaPainel" id="aba-descricao">
+                    <div id="textoDescricao"></div>
+                </div>
+                <div class="abaPainel oculto" id="aba-pagamento">
+                    <div id="textoPagamento"></div>
+                </div>
+                <div class="abaPainel oculto" id="aba-avaliacoes">
+                    <div id="listaAvaliacoes"></div>
+                    <div id="formAvaliacao">
+                        <h3>Deixe sua avaliação</h3>
+                        <p id="estrelasForm">
+                            <button type="button" class="estrelaForm" data-nota="1" aria-label="1 estrela">☆</button><button type="button" class="estrelaForm" data-nota="2" aria-label="2 estrelas">☆</button><button type="button" class="estrelaForm" data-nota="3" aria-label="3 estrelas">☆</button><button type="button" class="estrelaForm" data-nota="4" aria-label="4 estrelas">☆</button><button type="button" class="estrelaForm" data-nota="5" aria-label="5 estrelas">☆</button>
+                        </p>
+                        <label for="avNome">Seu nome</label>
+                        <input type="text" id="avNome" maxlength="60" />
+                        <label for="avTexto">Comentário</label>
+                        <textarea id="avTexto" rows="4" maxlength="500"></textarea>
+                        <button type="button" id="btnEnviarAvaliacao" class="btnComprar">Enviar avaliação</button>
+                        <p id="msgAvaliacao" class="msg"></p>
+                    </div>
+                </div>
+            </article><!--Fim abas-->
+
+            <!-- Produtos relacionados -->
+            <article id="blocoRelacionados" class="articleSecao"><!--Inicio relacionados-->
+                <h2 class="h2">Produtos relacionados</h2>
+                <hr class="hrTitulo" align="center" />
+                <div class="divLinha" id="listaRelacionados"></div>
+            </article><!--Fim relacionados-->
+        </section><!--Fim sectionMeio-->
+        <div id="divFooter"><!-- Inicio divFooter -->
+            <div class="divLinha"><!-- Inicio divLinha -->
+                <div class="divColFooter">
+                    <p>
+                        <img id="logoFooter" src="../img/logo-branco.png" alt="Logomarca Estância Gaúcha"
+                            title="Estância Gaúcha" />
+                    </p>
+                    <p>Tradição gaúcha em um só lugar: pilcha, chapelaria, chimarrão, churrasco e selaria.</p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Categorias</h3>
+                    <p>
+                        <a href="./pilcha-masculina.html">Pilcha Masculina</a><br />
+                        <a href="./pilcha-feminina.html">Pilcha Feminina</a><br />
+                        <a href="./pilcha-infantil.html">Pilcha Infantil</a><br />
+                        <a href="./chapelaria.html">Chapelaria</a><br />
+                        <a href="./chimarrao.html">Chimarrão</a><br />
+                        <a href="./churrasco.html">Churrasco</a><br />
+                        <a href="./selaria.html">Selaria</a><br />
+                    </p>
+                </div>
+                <div class="divColFooter">
+                    <h3>Atendimento</h3>
+                    <p>
+                        <a href="./produtos.html">Todos os produtos</a><br />
+                        <a href="./fale-conosco.html">Fale conosco (SAC)</a><br />
+                        <a href="./conta.html" class="linkContaTxt">Minha conta</a><br />
+                        <a href="./carrinho.html">Carrinho</a><br />
+                        Segunda a sábado, das 8h às 18h
+                    </p>
+                </div>
+            </div><!-- Fim divLinha -->
+            <p id="pDireitos">
+                © Estância Gaúcha - Projeto PI - Todos os direitos reservados
+            </p>
+        </div><!-- Fim divFooter-->
+    </main>
+    <script src="../js/comum.js" data-raiz="../"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/produto.js"></script>
+</body>
+
+</html>
