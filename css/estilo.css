@@ -84,11 +84,89 @@ h1, h2, h3{
 /* ---------- Menu ---------- */
 #navSup{
     background-color: #321b0e;
-    border-bottom: 5px solid #1F4d2b;
+    border-bottom: 0px solid #1F4d2b;
     text-align: center;
     padding-top: 0.4%;
     padding-bottom: 0.4%;
 }
+
+/* ---------- Menu com submenu (aparece ao passar o mouse) ---------- */
+
+/* Barra do menu (marrom, igual ao seu site) */
+.menu-principal {
+    background-color: #321b0e;
+    padding-top: 0.4%;
+    padding-bottom: 0.4%;
+  }
+  
+  /* Lista horizontal e centralizada */
+  .menu-principal .lista-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+  }
+  
+  /* position relative faz o submenu se posicionar em relação a este item */
+  .menu-principal .item-menu {
+    position: relative;
+  }
+  
+  /* Nomes das categorias na barra marrom */
+  .menu-principal .item-menu > a {
+    display: block;
+    padding: 14px 0;
+    color: #f5e9d6;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;   /* a Cinzel já mostra as letras minúsculas como versaletes */
+  }
+  
+  /* Painel que abre embaixo (escondido por padrão) */
+  .menu-principal .submenu {
+    display: none;              /* escondido */
+    position: absolute;         /* fica por cima da página, sem empurrar nada */
+    top: 100%;                  /* logo abaixo do item do menu */
+    left: 0;
+    z-index: 1000;              /* garante que fique acima do banner */
+    background-color: #ffffff;
+    padding: 20px 30px;
+    gap: 40px;                  /* espaço entre as duas colunas */
+    text-align: left;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Mostra o painel quando o mouse está em cima do item */
+  .menu-principal .item-menu:hover .submenu {
+    display: flex;              /* flex coloca as duas colunas lado a lado */
+  }
+  
+  /* Listas de produtos dentro do painel */
+  .menu-principal .submenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Produtos dentro do painel branco */
+  .menu-principal .submenu a {
+    display: block;
+    padding: 5px 0;
+    color: #555555;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    white-space: nowrap;        /* impede o nome de quebrar em duas linhas */
+  }
+  
+  /* Efeito ao passar o mouse em um produto */
+  .menu-principal .submenu a:hover {
+    color: #321b0e;
+    text-decoration: underline;
+  }
+  
 .linkMenu{
     display: inline-block;
     font-family: 'Cinzel', serif;
