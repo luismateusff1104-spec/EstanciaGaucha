@@ -92,81 +92,141 @@ h1, h2, h3{
 
 /* ---------- Menu com submenu (aparece ao passar o mouse) ---------- */
 
-/* Barra do menu (marrom, igual ao seu site) */
-.menu-principal {
+/* Barra marrom do menu */
+.menu-principal{
     background-color: #321b0e;
     padding-top: 0.4%;
     padding-bottom: 0.4%;
-  }
-  
-  /* Lista horizontal e centralizada */
-  .menu-principal .lista-menu {
+}
+
+/* Lista horizontal e centralizada */
+.menu-principal .lista-menu{
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 36px;
-  }
-  
-  /* position relative faz o submenu se posicionar em relação a este item */
-  .menu-principal .item-menu {
+    gap: 6px;
+}
+
+/* position relative faz o submenu se posicionar em relação a este item */
+.menu-principal .item-menu{
     position: relative;
-  }
-  
-  /* Nomes das categorias na barra marrom */
-  .menu-principal .item-menu > a {
+}
+
+/* Nomes das categorias na barra marrom */
+.menu-principal .item-menu > a{
     display: block;
-    padding: 14px 0;
+    padding: 13px 16px;
     color: #f5e9d6;
     text-decoration: none;
-    font-family: 'Cinzel', serif;   /* a Cinzel já mostra as letras minúsculas como versaletes */
-  }
-  
-  /* Painel que abre embaixo (escondido por padrão) */
-  .menu-principal .submenu {
-    display: none;              /* escondido */
-    position: absolute;         /* fica por cima da página, sem empurrar nada */
-    top: 100%;                  /* logo abaixo do item do menu */
+    font-family: 'Cinzel', serif;
+    border-radius: 8px;
+}
+
+/* Categoria fica verde quando o mouse está nela */
+.menu-principal .item-menu:hover > a{
+    background-color: #1F4d2b;
+    color: #FFFFFF;
+}
+
+/* Painel que abre embaixo (escondido por padrão) */
+.menu-principal .submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
-    z-index: 1000;              /* garante que fique acima do banner */
-    background-color: #ffffff;
-    padding: 20px 30px;
-    gap: 40px;                  /* espaço entre as duas colunas */
+    z-index: 1000;
+    min-width: 280px;
+    padding: 20px 26px 16px 26px;
+    background-color: #FFFFFF;
+    border-top: 4px solid #1F4d2b;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 16px 32px rgba(50, 27, 14, 0.28);
     text-align: left;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-  }
-  
-  /* Mostra o painel quando o mouse está em cima do item */
-  .menu-principal .item-menu:hover .submenu {
-    display: flex;              /* flex coloca as duas colunas lado a lado */
-  }
-  
-  /* Listas de produtos dentro do painel */
-  .menu-principal .submenu ul {
+}
+
+/* Últimas categorias abrem para a esquerda, para não sair da tela */
+.menu-principal .submenuDir{
+    left: auto;
+    right: 0;
+}
+
+/* Mostra o painel com um efeito suave */
+.menu-principal .item-menu:hover .submenu{
+    display: block;
+    animation: menuEntra 0.2s ease;
+}
+@keyframes menuEntra{
+    from{
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Lista de tipos em 2 colunas (3 colunas quando tem muitos tipos) */
+.menu-principal .submenu ul{
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Produtos dentro do painel branco */
-  .menu-principal .submenu a {
+    columns: 2;
+    column-gap: 30px;
+}
+.menu-principal .submenu3 ul{
+    columns: 3;
+}
+.menu-principal .submenu li{
+    break-inside: avoid;
+}
+
+/* Cada tipo de produto */
+.menu-principal .submenu a{
     display: block;
-    padding: 5px 0;
-    color: #555555;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    white-space: nowrap;        /* impede o nome de quebrar em duas linhas */
-  }
-  
-  /* Efeito ao passar o mouse em um produto */
-  .menu-principal .submenu a:hover {
+    padding: 8px 12px;
+    margin: 1px 0;
     color: #321b0e;
-    text-decoration: underline;
-  }
-  
+    text-decoration: none;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 15px;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    border-radius: 6px;
+}
+.menu-principal .submenu a:hover{
+    color: #1F4d2b;
+    background-color: #e3ece5;
+    border-left-color: #1F4d2b;
+}
+
+/* Link "Ver tudo" no rodapé do painel */
+.menu-principal .submenu .verTudo{
+    margin-top: 12px;
+    padding-top: 14px;
+    font-weight: bold;
+    color: #1F4d2b;
+    border-top: 1px solid #e3ddd6;
+    border-radius: 0 0 6px 6px;
+}
+
+/* Celular e tablet: menu quebra em linhas e sem painel (não existe "passar o mouse" no toque) */
+@media all and (max-width: 1000px){
+    .menu-principal .lista-menu{
+        flex-wrap: wrap;
+        gap: 0 6px;
+    }
+    .menu-principal .item-menu > a{
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    .menu-principal .submenu{
+        display: none !important;
+    }
+}
+
 .linkMenu{
     display: inline-block;
     font-family: 'Cinzel', serif;
