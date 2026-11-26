@@ -28,7 +28,7 @@ require_once __DIR__ . '/helpers.php';
             <section id="cabecalho">
                 <div id="cabecalhoEsq"><!-- Inicio div cabecalhoEsq-->
                     <p class="p1">
-                        <a href="./index.html">
+                        <a href="./index.php">
                             <img id="logoEstancia" src="./img/logo-escura.png" alt="Logomarca Estância Gaúcha"
                                 title="Estância Gaúcha" />
                         </a>
@@ -206,7 +206,7 @@ require_once __DIR__ . '/helpers.php';
             </article><!--Fim articleBannerSup-->
 
             <article class="articleSecao"><!--Inicio categorias-->
-                <h2 class="h2">Compre por categoria</h2>
+                <h2 class="h2">Navegue por categoria</h2>
                 <hr class="hrTitulo" align="center" />
 
                 <div class="divLinha"><!-- Inicio divLinha -->

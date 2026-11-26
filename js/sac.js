@@ -4,7 +4,7 @@
    As mensagens ficam salvas só neste navegador (simulação).
    ========================================================== */
 
-function mostrarMsg(id, texto, ok) {
+   function mostrarMsg(id, texto, ok) {
     var el = document.getElementById(id);
     el.innerHTML = texto;
     el.className = 'msg ' + (ok ? 'msgOk' : 'msgErro');
@@ -14,12 +14,33 @@ function emailValido(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+// Coloca o telefone no formato (DDD) 00000-0000 enquanto a pessoa digita
+function mascaraTelefone(valor) {
+    var n = valor.replace(/\D/g, '').slice(0, 11);     // só números, no máximo 11
+    if (n.length === 0) { return ''; }
+    if (n.length <= 2) { return '(' + n; }
+    if (n.length <= 6) { return '(' + n.slice(0, 2) + ') ' + n.slice(2); }
+    if (n.length <= 10) { return '(' + n.slice(0, 2) + ') ' + n.slice(2, 6) + '-' + n.slice(6); }
+    return '(' + n.slice(0, 2) + ') ' + n.slice(2, 7) + '-' + n.slice(7);
+}
+
+var campoTel = document.getElementById('sTel');
+campoTel.addEventListener('input', function () {
+    campoTel.value = mascaraTelefone(campoTel.value);
+});
+
+// Mostra quantos caracteres já foram escritos na mensagem
+var campoMensagem = document.getElementById('sMensagem');
+campoMensagem.addEventListener('input', function () {
+    document.getElementById('contaMsg').textContent = campoMensagem.value.length;
+});
+
 // Se a pessoa está logada, já preenche nome, e-mail e telefone
 var usuario = usuarioAtual();
 if (usuario) {
     document.getElementById('sNome').value = usuario.nome;
     document.getElementById('sEmail').value = usuario.email;
-    document.getElementById('sTel').value = usuario.tel || '';
+    campoTel.value = mascaraTelefone(usuario.tel || '');
 }
 
 // ---------- Enviar mensagem ----------
@@ -34,6 +55,7 @@ document.getElementById('formSac').addEventListener('submit', function (evento) 
 
     if (nome.length < 3) { mostrarMsg('msgSac', 'Digite seu nome.', false); return; }
     if (!emailValido(email)) { mostrarMsg('msgSac', 'Digite um e-mail válido.', false); return; }
+    if (tel !== '' && tel.replace(/\D/g, '').length < 10) { mostrarMsg('msgSac', 'Telefone incompleto. Digite o DDD e o número.', false); return; }
     if (assunto === '') { mostrarMsg('msgSac', 'Escolha o assunto.', false); return; }
     if (mensagem.length < 10) { mostrarMsg('msgSac', 'Escreva sua mensagem (mínimo de 10 caracteres).', false); return; }
 
@@ -56,6 +78,7 @@ document.getElementById('formSac').addEventListener('submit', function (evento) 
     document.getElementById('sAssunto').value = '';
     document.getElementById('sPedido').value = '';
     document.getElementById('sMensagem').value = '';
+    document.getElementById('contaMsg').textContent = '0';
 });
 
 // ---------- Consultar protocolo ----------

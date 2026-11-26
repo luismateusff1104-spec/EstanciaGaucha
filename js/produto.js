@@ -235,7 +235,7 @@
     
     document.title = 'Estância Gaúcha | ' + produto.nome;
     pegar('pCaminhoProduto').innerHTML =
-        '<a href="' + raiz + 'index.html">Início</a> &gt; ' +
+        '<a href="' + raiz + 'index.php">Início</a> &gt; ' +
         '<a href="' + raiz + 'pages/' + pedacos[0] + '.html">' + esc(nomes[0]) + '</a> &gt; ' +
         '<a href="' + raiz + 'pages/' + pedacos[0] + '/' + pedacos[1] + '.html">' + esc(nomes[1]) + '</a> &gt; ' +
         esc(produto.nome);
