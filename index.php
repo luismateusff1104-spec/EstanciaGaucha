@@ -1,5 +1,9 @@
+<?php
+require_once __DIR__ . '/helpers.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 
 <head>
     <title>Estância Gaúcha | Loja de artigos gaúchos</title>
@@ -20,7 +24,7 @@
 <body>
     <main>
         <header>
-            <div id="divTopo">Frete grátis acima de R$ 299,00 | Parcele em até 6x sem juros | Troca em até 30 dias</div>
+        <div id="divTopo"><?= textoTopo() ?></div>
             <section id="cabecalho">
                 <div id="cabecalhoEsq"><!-- Inicio div cabecalhoEsq-->
                     <p class="p1">
